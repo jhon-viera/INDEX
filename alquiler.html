@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquiler | Dulce Antojo</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<nav>
+    <h2>Dulce Antojo</h2>
+    <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="bandeja.html">Bandejas</a>
+        <a href="cajas.html">Cajas</a>
+        <a href="decoraciones.html">Decoraciones</a>
+        <a href="alquiler.html" style="color: #d4af37;">Alquiler</a> 
+        <a href="contacto.html">Contacto</a>
+    </div>
+</nav>
+
+<h1 class="titulo">Alquiler para Eventos</h1>
+
+<p class="subtitulo-resaltado">
+    <i class="fas fa-star"></i> 
+    Alquiler de mobiliario y decoración premium para tus fiestas
+    <i class="fas fa-star"></i>
+</p>
+
+<p class="subtitulo-resaltado">
+    <i class="fas fa-info-circle"></i> 
+    Reserva con anticipación para asegurar la disponibilidad de tu fecha
+    <i class="fas fa-info-circle"></i>
+</p>
+
+<div class="galeria">
+    
+    <div class="producto-card">
+        <img src="img/ALQUILER/MOBILIARIO_1.jpg" alt="Mobiliario Dorado">
+        <div class="info-producto">
+            <h3>Set Dorado Imperial</h3>
+            <p>Incluye mesa principal, 2 pedestales y backing circular decorado.</p>
+            <span class="precio">$50.000</span>
+            <a href="https://wa.me/573186288460?text=Hola!%20Me%20interesa%20alquilar%20el%20Set%20Dorado" class="btn-pedido">Pedir por WhatsApp</a>
+        </div> 
+    </div>
+
+    <div class="producto-card">
+        <img src="img/ALQUILER/SILLAS.jpg" alt="Sillas Tiffany">
+        <div class="info-producto">
+            <h3>Sillas Tiffany Blancas</h3>
+            <p>Elegantes sillas con cojín de terciopelo (Precio por unidad).</p>
+            <span class="precio">$3.500</span>
+            <a href="https://wa.me/573186288460?text=Hola!%20Me%20interesa%20alquilar%20Sillas%20Tiffany" class="btn-pedido">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="producto-card">
+        <img src="img/ALQUILER/LUCES.jpg" alt="Letrero Neón">
+        <div class="info-producto">
+            <h3>Letrero Neón "Let's Party"</h3>
+            <p>Iluminación LED ideal para fondos fotográficos y decoración.</p>
+            <span class="precio">$25.000</span>
+            <a href="https://wa.me/573186288460?text=Hola!%20Me%20interesa%20alquilar%20el%20Letrero%20Neon" class="btn-pedido">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="producto-card">
+        <img src="img/ALQUILER/MENAJE.jpg" alt="Menaje">
+        <div class="info-producto">
+            <h3>Set de Menaje Lujo</h3>
+            <p>Platos base dorados, copas de cristal y cubiertos premium.</p>
+            <span class="precio">$38.000</span>
+            <a href="https://wa.me/573186288460?text=Hola!%20Me%20interesa%20alquilar%20el%20Set%20de%20Menaje" class="btn-pedido">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+</div>
+
+<footer style="text-align: center; padding: 40px; color: #6a4c93;">
+    <p>&copy; 2026 Dulce Antojo - Elegancia en cada detalle ❤️</p>
+</footer>
+
+<div id="modalImagen" class="modal">
+    <span class="cerrar">&times;</span>
+    <img class="modal-contenido" id="imgGrande">
+</div>
+    
+<a href="https://wa.me/573186288460?text=Hola!%20Deseo%20más%20información%20sobre%20alquiler%20para%20eventos" 
+   class="whatsapp-float" 
+   target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip-whatsapp">¡Reserva aquí! ✿</span>
+</a>
+    
+<script>
+    // Script para el zoom de las imágenes
+    const imagenesGaleria = document.querySelectorAll('.producto-card img');
+    const elModal = document.getElementById("modalImagen");
+    const imagenGrande = document.getElementById("imgGrande");
+
+    imagenesGaleria.forEach(img => {
+        img.onclick = function() {
+            elModal.style.display = "flex"; 
+            imagenGrande.src = this.src;
+        }
+    });
+
+    elModal.onclick = function() {
+        elModal.style.display = "none";
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") elModal.style.display = "none";
+    });
+</script>
+    
+</body> 
+</html>
