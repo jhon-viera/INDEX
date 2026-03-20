@@ -1,6 +1,6 @@
 /* =======================================================
-   DULCE ANTOJO - ESTILOS UNIFICADOS
-   Diseño: Premium, Floral y Dorado
+   DULCE ANTOJO - EDICIÓN ESPECIAL PRIMAVERA (21 MARZO)
+   Diseño: Flores Amarillas, Fresco y Dorado
    ======================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap');
@@ -13,11 +13,16 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #fdf8ff;
-    background-image: url('https://www.transparenttextures.com/patterns/floral-paper.png');
-    color: #444;
+    /* Fondo crema suave con textura floral primaveral */
+    background-color: #fffdf0;
+    background-image: url('https://www.transparenttextures.com/patterns/flowers-wild.png');
+    color: #5d4037; /* Marrón suave para el texto, combina mejor que el gris */
     overflow-x: hidden;
     line-height: 1.6;
 }
@@ -30,8 +35,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 20px rgba(106, 76, 147, 0.15);
-    border-bottom: 3px solid #d4af37;
+    box-shadow: 0 4px 20px rgba(251, 192, 45, 0.15); /* Sombra amarilla */
+    border-bottom: 3px solid #fbc02d; /* Amarillo Dorado */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -39,20 +44,20 @@ nav {
 
 nav h2 {
     font-family: 'Great Vibes', cursive;
-    color: #6a4c93;
+    color: #f57f17; /* Amarillo oscuro/Anaranjado para contraste */
     font-size: 35px;
 }
 
 nav div a {
     text-decoration: none;
     margin-left: 25px;
-    color: #555;
+    color: #333; /* Mejorado contraste para accesibilidad */
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 nav div a:hover {
-    color: #d4af37;
+    color: #fbc02d;
 }
 
 /* 3. HERO SECTION (Banner Principal)
@@ -60,22 +65,23 @@ nav div a:hover {
 .hero {
     height: 50vh;
     margin: 20px;
-    background: linear-gradient(rgba(106, 76, 147, 0.3), rgba(106, 76, 147, 0.3)),
-                url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1350&q=80');
+    /* Imagen de flores amarillas primaverales */
+    background: linear-gradient(rgba(255, 235, 59, 0.2), rgba(245, 127, 23, 0.4)),
+                url('img/decoracion/fondo f.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 10px solid #ffffff;
-    outline: 2px solid #d4af37;
+    outline: 2px solid #fbc02d;
 }
 
 .hero h1 {
     font-family: 'Great Vibes', cursive;
     font-size: clamp(40px, 8vw, 65px);
     color: #ffffff;
-    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+    text-shadow: 2px 2px 10px rgba(93, 64, 55, 0.6); /* Sombra marrón suave */
     text-align: center;
 }
 
@@ -85,7 +91,7 @@ nav div a:hover {
     text-align: center;
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
-    color: #6a4c93;
+    color: #f57f17; /* Amarillo oscuro */
     padding: 15px 40px;
     margin: 30px auto;
     display: block;
@@ -94,9 +100,8 @@ nav div a:hover {
 
 .subtitulo::before, 
 .subtitulo::after {
-    content: "✿";
+    content: "🌻"; /* Girasol para el 21 de marzo */
     margin: 0 15px;
-    color: #d4af37;
     font-size: 1.5rem;
 }
 
@@ -128,14 +133,15 @@ nav div a:hover {
     border-radius: 20px;
     overflow: hidden;
     position: relative;
-    border: 2px solid #d4af37;
-    box-shadow: 5px 5px 15px rgba(106, 76, 147, 0.1);
+    border: 2px solid #fff59d; /* Amarillo muy suave */
+    box-shadow: 5px 5px 15px rgba(251, 192, 45, 0.1);
     flex-shrink: 0;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .reel-card:hover {
     transform: scale(1.02);
+    border-color: #fbc02d;
 }
 
 .reel-card video {
@@ -149,12 +155,12 @@ nav div a:hover {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(106, 76, 147, 0.85);
+    background: rgba(245, 127, 23, 0.9); /* Anaranjado */
     color: #fff;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
-    border: 1px solid #d4af37;
+    border: 1px solid #fbc02d;
     white-space: nowrap;
     z-index: 2;
 }
@@ -172,16 +178,17 @@ nav div a:hover {
     background: #ffffff;
     border-radius: 40px 10px 40px 10px;
     overflow: hidden;
-    box-shadow: 8px 8px 20px rgba(106, 76, 147, 0.1);
-    border: 2px solid #f0eaff;
-    transition: transform 0.4s ease, border-color 0.4s ease;
+    box-shadow: 8px 8px 20px rgba(251, 192, 45, 0.1);
+    border: 2px solid #fffde7; /* Crema suave */
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
     display: flex;
     flex-direction: column;
 }
 
 .producto-card:hover {
-    border-color: #d4af37;
+    border-color: #fbc02d;
     transform: translateY(-8px);
+    box-shadow: 8px 15px 25px rgba(251, 192, 45, 0.2);
 }
 
 .producto-card img, 
@@ -190,7 +197,7 @@ nav div a:hover {
     height: 230px;
     object-fit: cover;
     display: block;
-    cursor: zoom-in; /* Indica que la imagen es clickeable */
+    cursor: zoom-in;
 }
 
 .info-producto {
@@ -200,7 +207,7 @@ nav div a:hover {
 
 .info-producto h3 {
     font-family: 'Playfair Display', serif;
-    color: #6a4c93;
+    color: #5d4037; /* Marrón */
     font-size: 1.1rem;
     margin-bottom: 10px;
 }
@@ -208,27 +215,29 @@ nav div a:hover {
 .precio {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
-    color: #d4af37;
+    color: #f57f17; /* Amarillo fuerte */
     font-weight: bold;
     display: block;
     margin-bottom: 15px;
 }
 
-/* 7. BOTONES (Efecto Brillo Oro)
+/* 7. BOTONES (Efecto Brillo Oro Primavera)
    ========================================= */
 .btn-pedido {
     text-decoration: none;
-    background: linear-gradient(45deg, #6a4c93, #8e44ad);
+    /* Gradiente Amarillo a Anaranjado */
+    background: linear-gradient(45deg, #fbc02d, #f57f17);
     color: #ffffff;
     padding: 12px;
     border-radius: 50px;
     font-weight: 600;
     display: block;
-    border: 1.5px solid #d4af37;
+    border: 1.5px solid #ffeb3b;
     position: relative;
     overflow: hidden;
     transition: background 0.3s ease;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(245, 127, 23, 0.2);
 }
 
 .btn-pedido::after {
@@ -238,9 +247,13 @@ nav div a:hover {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.4); /* Brillo más blanco para primavera */
     transform: rotate(45deg);
     transition: 0.6s;
+}
+
+.btn-pedido:hover {
+    background: linear-gradient(45deg, #f57f17, #fbc02d);
 }
 
 .btn-pedido:hover::after {
@@ -258,7 +271,7 @@ nav div a:hover {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(93, 64, 55, 0.9); /* Fondo marrón oscuro traslúcido */
     cursor: zoom-out;
 }
 
@@ -268,7 +281,7 @@ nav div a:hover {
     max-width: 90%;
     max-height: 80vh;
     border-radius: 10px;
-    border: 3px solid #d4af37;
+    border: 3px solid #fbc02d;
     animation: zoom 0.3s;
 }
 
@@ -323,28 +336,31 @@ nav div a:hover {
         padding: 0 5%;
     }
 }
-/* Contenedor de botones en vertical */
+
+/* 10. REDES SOCIALES Y CONTACTO
+   ========================================= */
 .redes-sociales {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    align-items: center; /* Centra los botones en la página */
+    align-items: center;
     margin-top: 30px;
+    padding-bottom: 30px;
 }
 
-/* Estilo de los botones */
 .social-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 250px; /* Ancho fijo para que se vean ordenados */
+    width: 250px;
     padding: 12px;
     border-radius: 50px;
-    text-decoration: none !important; /* Elimina el subrayado azul */
+    text-decoration: none !important;
     color: white !important;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.3);
 }
 
 .social-btn i {
@@ -352,30 +368,31 @@ nav div a:hover {
     margin-right: 10px;
 }
 
-/* Colores Oficiales de las botones de conctactos */
+/* Colores adaptados con gradientes suaves para primavera */
 .whatsapp {
-    background: linear-gradient(45deg, #25d366, #128c7e);
+    background: linear-gradient(45deg, #4caf50, #2e7d32); /* Verde hoja */
 }
 
 .instagram {
+    /* Mantenemos su gradiente pero un poco más cálido */
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
 
 .tiktok {
-    background: linear-gradient(45deg, #000, #25f4ee, #fe2c55); /* Colores típicos de TikTok */
+    background: linear-gradient(45deg, #424242, #000000); /* Negro neutro para no chocar */
 }
 
 .social-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(93, 64, 55, 0.2);
 }
-/* Boton de wssp spam */
 
+/* Boton de wssp flotante */
 .whatsapp-float {
     position: fixed;
     bottom: 25px;
     right: 25px;
-    background-color: #25d366 !important;
+    background-color: #4caf50 !important; /* Verde primavera */
     color: white !important;
     border-radius: 50px !important;
     width: 60px;
@@ -385,19 +402,26 @@ nav div a:hover {
     justify-content: center;
     text-decoration: none !important;
     z-index: 9999;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #2e7d32 !important;
+    transform: scale(1.1);
 }
 
 /* El texto al lado del botón */
 .tooltip-whatsapp {
     position: absolute;
-    right: 70px; /* Lo mueve a la izquierda del círculo */
-    background: #6a4c93;
+    right: 70px;
+    background: #f57f17; /* Anaranjado */
     color: white;
     padding: 8px 15px;
     border-radius: 15px;
     font-size: 14px;
-    white-space: nowrap; /* Evita que el texto salte de línea */
-    border: 1px solid #d4af37;
+    white-space: nowrap;
+    border: 1px solid #fbc02d;
     pointer-events: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
