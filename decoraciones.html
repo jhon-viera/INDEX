@@ -225,10 +225,13 @@
 
     </section>
 
-    <!-- Fondo de zoom para las imágenes -->
-    <div id="modalImagen" class="modal" onclick="this.style.display='none'">
+    <!-- Modal con estructura completa, contenedor y protección de marca de agua -->
+    <div id="modalImagen" class="modal">
         <span class="cerrar">&times;</span>
-        <img class="modal-contenido" id="imgGrande">
+        <div class="contenedor-imagen-modal">
+            <img class="modal-contenido" id="imgGrande" oncontextmenu="return false;">
+            <div class="marca-agua-modal"></div>
+        </div>
     </div>
 
     <!-- Botón flotante de WhatsApp -->
@@ -240,27 +243,38 @@
 </a>
     
     <script>
-    // Seleccionamos todas las imágenes dentro de las tarjetas de productos
     const imagenesGaleria = document.querySelectorAll('.producto-card img');
     const elModal = document.getElementById("modalImagen");
     const imagenGrande = document.getElementById("imgGrande");
+    const btnCerrar = document.querySelector(".cerrar");
 
     // Función para abrir el zoom
     imagenesGaleria.forEach(img => {
         img.onclick = function() {
-            elModal.style.display = "flex"; // Usamos flex para centrar
+            elModal.style.display = "flex";
             imagenGrande.src = this.src;
         }
     });
 
-    // Función para cerrar al hacer clic en cualquier parte del fondo
-    elModal.onclick = function() {
-        elModal.style.display = "none";
+    // Función para cerrar al hacer clic en la X
+    if (btnCerrar) {
+        btnCerrar.onclick = function() {
+            elModal.style.display = "none";
+        }
+    }
+
+    // Función para cerrar al hacer clic en el fondo oscuro del modal (fuera de la imagen)
+    elModal.onclick = function(e) {
+        if (e.target === elModal) {
+            elModal.style.display = "none";
+        }
     }
 
     // Cerrar con la tecla Escape
     document.addEventListener('keydown', (e) => {
-        if (e.key === "Escape") elModal.style.display = "none";
+        if (e.key === "Escape") {
+            elModal.style.display = "none";
+        }
     });
 </script>
     

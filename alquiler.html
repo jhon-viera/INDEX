@@ -44,7 +44,7 @@
             <h3>niño o niña</h3>
             <p>Incluye tres mesas redondas principal, dos tableros circular en la parte de arriba decorado.</p>
             <!-- <span class="precio">$50.000</span> -->
-            <a href="https://wa.me/573186288460?text=Hola!%20Me%20interesa%20alquilar%20el%20Set%20Dorado" class="btn-pedido">Pedir por WhatsApp</a>
+            <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20alquiler:%20niño%20o%20niña" class="btn-pedido">Pedir por WhatsApp</a>
         </div> 
     </div>
 
@@ -54,10 +54,9 @@
             <h3>es niño </h3>
             <p>Incluye tres mesas redondas principal, dos tableros circular.</p>
             <!-- <span class="precio">$3.500</span> -->
-            <a href="https://wa.me/573186288460?text=Hola!%20Me%20interesa%20alquilar%20Sillas%20Tiffany" class="btn-pedido">Pedir por WhatsApp</a>
+            <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20alquiler:%20es%20niño" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
-
 
 </div>
 
@@ -65,11 +64,16 @@
     <p>&copy; 2026 Dulce Antojo - Elegancia en cada detalle ❤️</p>
 </footer>
 
-<div id="modalImagen" class="modal">
+<!-- Modal con marca de agua para proteger la imagen -->
+<div id="modalImagen" class="modal" onclick="this.style.display='none'">
     <span class="cerrar">&times;</span>
-    <img class="modal-contenido" id="imgGrande">
+    <div class="contenedor-imagen-modal">
+        <!-- El oncontextmenu evita que den clic derecho para guardar la imagen -->
+        <img class="modal-contenido" id="imgGrande" oncontextmenu="return false;">
+        <div class="marca-agua-modal"></div>
+    </div>
 </div>
-    
+
 <a href="https://wa.me/573147767322?text=Hola!%20Deseo%20más%20información%20sobre%20alquiler%20para%20eventos" 
    class="whatsapp-float" 
    target="_blank">

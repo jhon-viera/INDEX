@@ -6,9 +6,41 @@
     <title>Cajas Primavera - Dulce Antojo</title>
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Estilos para asegurar el desplazamiento horizontal fluido y táctil del carrusel */
+        .reels-carrusel {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px 20px 20px 20px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        .reels-carrusel::-webkit-scrollbar {
+            height: 8px;
+        }
+        .reels-carrusel::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .reels-carrusel::-webkit-scrollbar-thumb {
+            background: #f57f17;
+            border-radius: 10px;
+        }
+        .reels-track {
+            display: inline-flex;
+            gap: 15px;
+        }
+        .reel-card {
+            display: inline-block;
+            position: relative;
+            flex: 0 0 auto;
+        }
+    </style>
 </head>
 
-<body> <nav>
+<body> 
+<nav>
     <h2>Dulce Antojo</h2>
     <div class="menu">
         <a href="index.html">Inicio</a>
@@ -31,141 +63,203 @@
     </p>
 </div>
 
-<section class="reels-carrusel" style="padding-top: 0;"> 
-    <div class="reels-track">
+<<section class="reels-carrusel-container" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 40px;">
+        <button class="carrusel-btn carrusel-prev" onclick="moverCarrusel(-1)" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); color: #f57f17;"><i class="fas fa-chevron-left"></i></button>
         
-        <div class="reel-card">
-            <video autoplay muted loop playsinline><source src="img/cajas/video 7.mp4" type="video/mp4"></video>
-            <div class="reel-tag">Detalle </div>
-            <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.8); padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; color: #f57f17;">$130.000</div>
-        </div>
-      
-        <div class="reel-card">
-            <video autoplay muted loop playsinline><source src="img/cajas/video 9.mp4" type="video/mp4"></video>
-            <div class="reel-tag">Amor</div>
-            <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.8); padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; color: #f57f17;">$130.000</div>
-        </div>
-        
-        <div class="reel-card">
-            <video autoplay muted loop playsinline><source src="img/cajas/video 11.mp4" type="video/mp4"></video>
-            <div class="reel-tag">Aniversario</div>
-                        <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.8); padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; color: #f57f17;">$120.000</div>
+        <section class="reels-carrusel" id="carruselReels" style="padding-top: 0; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none;"> 
+            <div class="reels-track">
+                
+                <div class="reel-card" style="position: relative;">
+                    <video autoplay muted loop playsinline><source src="img/amarillo/video-1.mp4" type="video/mp4"></video>
+                    <div class="reel-tag">Detalle</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; color: #f57f17; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">$47.000</div>
+                </div>
+              
+                <div class="reel-card" style="position: relative;">
+                    <video autoplay muted loop playsinline><source src="img/amarillo/video-2.mp4" type="video/mp4"></video>
+                    <div class="reel-tag">Amor</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; color: #f57f17; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">$50.000</div>
+                </div>
+                
+                <div class="reel-card" style="position: relative;">
+                    <video autoplay muted loop playsinline><source src="img/amarillo/video-3.mp4" type="video/mp4"></video>
+                    <div class="reel-tag">Aniversario</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; color: #f57f17; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">$45.000</div>
+                </div>
 
+                <div class="reel-card" style="position: relative;">
+                    <video autoplay muted loop playsinline><source src="img/amarillo/video-4.mp4" type="video/mp4"></video>
+                    <div class="reel-tag">Aniversario</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; color: #f57f17; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">$40.000</div>
+                </div>
+
+                <div class="reel-card" style="position: relative;">
+                    <video autoplay muted loop playsinline><source src="img/amarillo/video-5.mp4" type="video/mp4"></video>
+                    <div class="reel-tag">Aniversario</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; color: #f57f17; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">$27.000</div>
+                </div>
+              
+                <div class="reel-card" style="position: relative;">
+                    <video autoplay muted loop playsinline><source src="img/amarillo/video-6.mp4" type="video/mp4"></video>
+                    <div class="reel-tag">Amor</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; color: #f57f17; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">$65.000</div>
+                </div>
+                
+                <div class="reel-card" style="position: relative;">
+                    <video autoplay muted loop playsinline><source src="img/amarillo/video-7.mp4" type="video/mp4"></video>
+                    <div class="reel-tag">Aniversario</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; color: #f57f17; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">$38.000</div>
+                </div>
+
+                <div class="reel-card" style="position: relative;">
+                    <video autoplay muted loop playsinline><source src="img/amarillo/video-4.mp4" type="video/mp4"></video>
+                    <div class="reel-tag">Aniversario</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; color: #f57f17; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">$40.000</div>
+                </div>
+
+                <div class="reel-card" style="position: relative;">
+                    <video autoplay muted loop playsinline><source src="img/cajas/video 7.mp4" type="video/mp4"></video>
+                    <div class="reel-tag">Detalle</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; color: #f57f17; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">$130.000</div>
+                </div>
+              
+                <div class="reel-card" style="position: relative;">
+                    <video autoplay muted loop playsinline><source src="img/cajas/video 9.mp4" type="video/mp4"></video>
+                    <div class="reel-tag">Amor</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; color: #f57f17; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">$130.000</div>
+                </div>
+                
+                <div class="reel-card" style="position: relative;">
+                    <video autoplay muted loop playsinline><source src="img/cajas/video 11.mp4" type="video/mp4"></video>
+                    <div class="reel-tag">Aniversario</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; color: #f57f17; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">$120.000</div>
+                </div>
+                
+            </div>
+        </section>
+
+        <button class="carrusel-btn carrusel-next" onclick="moverCarrusel(1)" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); color: #f57f17;"><i class="fas fa-chevron-right"></i></button>
+    </section>
+
+    <script>
+        function moverCarrusel(direccion) {
+            const carrusel = document.getElementById('carruselReels');
+            const desplazamiento = 300; // Píxeles que se desplaza al hacer clic en las flechas
+            carrusel.scrollBy({
+                left: direccion * desplazamiento,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+<p class="subtitulo" style="margin-top: 10px;">
+    <i class="fas fa-sun"></i> 
+    *!una rosa para cada ocasión¡*
+    <i class="fas fa-sun"></i>
+</p>
+<section class="galeria">
+    <div class="producto-card">
+        <img src="img/rosas/rosa-1.JPEG" alt="Caja 1" loading="lazy">
+        <div class="info-producto">
+            <h3>Caja Regalo 1</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$45.000</span>
+            <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%201" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
-        
+    </div>
+
+    <div class="producto-card">
+        <img src="img/rosas/rosa-2.JPEG" alt="Caja 2" loading="lazy">
+        <div class="info-producto">
+            <h3>Caja Regalo 2</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$50.000</span>
+            <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%202" class="btn-pedido">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="producto-card">
+        <img src="img/rosas/rosa-3.JPEG" alt="Caja 3" loading="lazy">
+        <div class="info-producto">
+            <h3>Caja Regalo 3</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$55.000</span>
+            <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%203" class="btn-pedido">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="producto-card">
+        <img src="img/rosas/rosa-5.JPEG" alt="Caja 5" loading="lazy">
+        <div class="info-producto">
+            <h3>Caja Regalo 4</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$48.000</span>
+            <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%205" class="btn-pedido">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="producto-card">
+        <img src="img/rosas/rosa-6.jpg" alt="Caja 6" loading="lazy">
+        <div class="info-producto">
+            <h3>Caja Regalo 5</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$60.000</span>
+            <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%208" class="btn-pedido">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="producto-card">
+        <img src="img/rosas/rosa-7.jpg" alt="Caja 7" loading="lazy">
+        <div class="info-producto">
+            <h3>Caja Regalo 6</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$52.000</span>
+            <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%209" class="btn-pedido">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="producto-card">
+        <img src="img/rosas/rosa-8.jpeg" alt="Caja 8" loading="lazy">
+        <div class="info-producto">
+            <h3>Caja Regalo 7</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$40.000</span>
+            <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%2010" class="btn-pedido">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="producto-card">
+        <img src="img/rosas/rosa-9.jpeg" alt="Caja 9" loading="lazy">
+        <div class="info-producto">
+            <h3>Caja Regalo 8</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$65.000</span>
+            <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%2011" class="btn-pedido">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="producto-card">
+        <img src="img/rosas/rosa-10.jpeg" alt="Caja 10" loading="lazy">
+        <div class="info-producto">
+            <h3>Caja Regalo 9</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$70.000</span>
+            <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%2012" class="btn-pedido">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="producto-card">
+        <img src="img/rosas/rosa-11.jpeg" alt="Caja 11" loading="lazy">
+        <div class="info-producto">
+            <h3>Caja Regalo 10</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$75.000</span>
+            <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%2016" class="btn-pedido">Pedir por WhatsApp</a>
+        </div>
     </div>
 </section>
 
 <p class="subtitulo" style="margin-top: 10px;">
-        <i class="fas fa-sun"></i> 
-        *!una rosa para cada ocasión¡*
-        <i class="fas fa-sun"></i>
-</p>
-<section class="galeria">
-        
-        <div class="producto-card">
-            <img src="img/rosas/rosa-1.JPEG" alt="Caja 1" loading="lazy">
-            <div class="info-producto">
-                <h3>Caja Regalo 1</h3>
-                <!-- <span class="precio">$65.000</span> -->
-                <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%201" class="btn-pedido">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <div class="producto-card">
-            <img src="img/rosas/rosa-2.JPEG" alt="Caja 2" loading="lazy">
-            <div class="info-producto">
-                <h3>Caja Regalo 2</h3>
-                <!-- <span class="precio">$70.000</span> -->
-                <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%202" class="btn-pedido">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <div class="producto-card">
-            <img src="img/rosas/rosa-3.JPEG" alt="Caja 3" loading="lazy">
-            <div class="info-producto">
-                <h3>Caja Regalo 3</h3>
-                <!-- <span class="precio">$40.000</span> -->
-                <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%203" class="btn-pedido">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-       
-        <div class="producto-card">
-            <img src="img/rosas/rosa-5.JPEG" alt="Caja 5" loading="lazy">
-            <div class="info-producto">
-                <h3>Caja Regalo 4</h3>
-                <!-- <span class="precio">$210.000</span> -->
-                <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%205" class="btn-pedido">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <div class="producto-card">
-            <img src="img/rosas/rosa-6.jpg" alt="Caja 6" loading="lazy">
-            <div class="info-producto">
-                <h3>Caja Regalo 5</h3>
-                <!-- <span class="precio">$150.000</span> -->
-                <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%208" class="btn-pedido">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <div class="producto-card">
-            <img src="img/rosas/rosa-7.jpg" alt="Caja 7" loading="lazy">
-            <div class="info-producto">
-                <h3>Caja Regalo 6</h3>
-                <!-- <span class="precio">$130.000</span> -->
-                <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%209" class="btn-pedido">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <div class="producto-card">
-            <img src="img/rosas/rosa-8.jpeg" alt="Caja 8" loading="lazy">
-            <div class="info-producto">
-                <h3>Caja Regalo 7</h3>
-                <p></p>
-                <!-- <span class="precio">$100.000</span> -->
-                <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%2010" class="btn-pedido">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <div class="producto-card">
-            <img src="img/rosas/rosa-9.jpeg" alt="Caja 9" loading="lazy">
-            <div class="info-producto">
-                <h3>Caja Regalo 8</h3>
-                <!-- <span class="precio">$70.000</span> -->
-                <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%2011" class="btn-pedido">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <div class="producto-card">
-            <img src="img/rosas/rosa-10.jpeg" alt="Caja 10" loading="lazy">
-            <div class="info-producto">
-                <h3>Caja Regalo 9</h3>
-                <!-- <span class="precio">$90.000</span> -->
-                <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%2012" class="btn-pedido">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <div class="producto-card">
-            <img src="img/rosas/rosa-11.jpeg" alt="Caja 11" loading="lazy">
-            <div class="info-producto">
-                <h3>Caja Regalo 10</h3>
-                <!-- <span class="precio">$40.000</span> -->
-                <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20la%20CAJA%2016" class="btn-pedido">Pedir por WhatsApp</a>
-            </div>
-        </div>
-</section>
-
-<p class="subtitulo" style="margin-top: 10px;">
-        <i class="fas fa-sun"></i> 
-        *!un detalle para cada ocasión¡*
-        <i class="fas fa-sun"></i>
+    <i class="fas fa-sun"></i> 
+    *!un detalle para cada ocasión¡*
+    <i class="fas fa-sun"></i>
 </p>
 <section class="galeria">
     <div class="producto-card">
         <img src="img/detalles/detalle-1.jpg" alt="Detalle 1" loading="lazy">
         <div class="info-producto">
             <h3>Detalle 1</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$35.000</span>
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%201" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
@@ -174,6 +268,7 @@
         <img src="img/detalles/detalle-2.jpg" alt="Detalle 2" loading="lazy">
         <div class="info-producto">
             <h3>Detalle 2</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$38.000</span>
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%202" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
@@ -182,6 +277,7 @@
         <img src="img/detalles/detalle-3.jpg" alt="Detalle 3" loading="lazy">
         <div class="info-producto">
             <h3>Detalle 3</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$42.000</span>
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%203" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
@@ -190,6 +286,7 @@
         <img src="img/detalles/detalle-4.JPEG" alt="Detalle 4" loading="lazy">
         <div class="info-producto">
             <h3>Detalle 4</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$45.000</span>
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%204" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
@@ -198,6 +295,7 @@
         <img src="img/detalles/detalle-5.JPEG" alt="Detalle 5" loading="lazy">
         <div class="info-producto">
             <h3>Detalle 5</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$50.000</span>
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%205" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
@@ -206,6 +304,7 @@
         <img src="img/detalles/detalle-6.JPEG" alt="Detalle 6" loading="lazy">
         <div class="info-producto">
             <h3>Detalle 6</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$30.000</span>
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%206" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
@@ -214,6 +313,7 @@
         <img src="img/detalles/detalle-7.JPEG" alt="Detalle 7" loading="lazy">
         <div class="info-producto">
             <h3>Detalle 7</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$48.000</span>
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%207" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
@@ -222,6 +322,7 @@
         <img src="img/detalles/detalle-8.jpg" alt="Detalle 8" loading="lazy">
         <div class="info-producto">
             <h3>Detalle 8</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$55.000</span>
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%208" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
@@ -230,6 +331,7 @@
         <img src="img/detalles/detalle-9.jpeg" alt="Detalle 9" loading="lazy">
         <div class="info-producto">
             <h3>Detalle 9</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$60.000</span>
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%209" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
@@ -238,6 +340,7 @@
         <img src="img/detalles/detalle-10.jpeg" alt="Detalle 10" loading="lazy">
         <div class="info-producto">
             <h3>Detalle 10</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$65.000</span>
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%2010" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
@@ -246,6 +349,7 @@
         <img src="img/osos/oso-1.JPEG" alt="Detalle 11" loading="lazy">
         <div class="info-producto">
             <h3>Detalle 11</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$70.000</span>
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%2011" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
@@ -254,6 +358,7 @@
         <img src="img/osos/oso-2.JPEG" alt="Detalle 12" loading="lazy">
         <div class="info-producto">
             <h3>Detalle 12</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$80.000</span>
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%2012" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
@@ -262,52 +367,68 @@
         <img src="img/osos/oso-3.JPEG" alt="Detalle 13" loading="lazy">
         <div class="info-producto">
             <h3>Detalle 13</h3>
+            <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$85.000</span>
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%2013" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
 </section>
 
-  <footer style="text-align: center; padding: 40px; background: white; border-top: 3px solid #d4af37;">
-        <p style="color: #6a4c93; font-family: 'Playfair Display', serif;">Dulce Antojo &copy; 2026 - Detalles con el corazón</p>
-    </footer>
+<footer style="text-align: center; padding: 40px; background: white; border-top: 3px solid #d4af37;">
+    <p style="color: #6a4c93; font-family: 'Playfair Display', serif;">Dulce Antojo &copy; 2026 - Detalles con el corazón</p>
+</footer>
 
-    <div id="modalImagen" class="modal" onclick="this.style.display='none'">
-        <span class="cerrar">&times;</span>
-        <img class="modal-contenido" id="imgGrande">
+<!-- Modal con estructura completa, contenedor y protección de marca de agua -->
+<div id="modalImagen" class="modal">
+    <span class="cerrar">&times;</span>
+    <div class="contenedor-imagen-modal">
+        <img class="modal-contenido" id="imgGrande" oncontextmenu="return false;">
+        <div class="marca-agua-modal"></div>
     </div>
-    
-    <!-- botón flotante de whatsapp -->
+</div>
+
+<!-- botón flotante de whatsapp -->
 <a href="https://wa.me/573147767322?text=Hola!%20Deseo%20más%20información%20sobre%20tus%20detalles" 
    class="whatsapp-float" 
    target="_blank">
     <i class="fab fa-whatsapp"></i>
     <span class="tooltip-whatsapp">¡Pide aquí! ✿</span>
 </a>
-    
-    <script>
-    // Seleccionamos todas las imágenes dentro de las tarjetas de productos
-    const imagenesGaleria = document.querySelectorAll('.producto-card img');
-    const elModal = document.getElementById("modalImagen");
-    const imagenGrande = document.getElementById("imgGrande");
 
-    // esto sirve para que haga zoom las imagnes cuando las toca
-    imagenesGaleria.forEach(img => {
-        img.onclick = function() {
-            elModal.style.display = "flex"; // Usamos flex para centrar
-            imagenGrande.src = this.src;
-        }
-    });
+<script>
+const imagenesGaleria = document.querySelectorAll('.producto-card img');
+const elModal = document.getElementById("modalImagen");
+const imagenGrande = document.getElementById("imgGrande");
+const btnCerrar = document.querySelector(".cerrar");
 
-    // esto cierrra el zoom con un click fuera de la imagen
-    elModal.onclick = function() {
+// Función para abrir el zoom
+imagenesGaleria.forEach(img => {
+    img.onclick = function() {
+        elModal.style.display = "flex";
+        imagenGrande.src = this.src;
+    }
+});
+
+// Función para cerrar al hacer clic en la X
+if (btnCerrar) {
+    btnCerrar.onclick = function() {
         elModal.style.display = "none";
     }
+}
 
-    // Cierra el zoom con la tecla Esc
-    document.addEventListener('keydown', (e) => {
-        if (e.key === "Escape") elModal.style.display = "none";
-    });
+// Función para cerrar al hacer clic en el fondo oscuro del modal (fuera de la imagen)
+elModal.onclick = function(e) {
+    if (e.target === elModal) {
+        elModal.style.display = "none";
+    }
+}
+
+// Cierra el zoom con la tecla Esc
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        elModal.style.display = "none";
+    }
+});
 </script>
-    
+
 </body>
 </html>

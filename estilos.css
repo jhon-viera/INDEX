@@ -28,6 +28,27 @@ body {
     line-height: 1.6;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Cambia la ruta por la de tu logo o imagen */
+    background-image: url('img/logo.jpeg'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* Ajusta el tamaño de la marca de agua. Puedes usar 'contain' o un porcentaje como '50%' */
+    background-size: 40%; 
+    /* Ajusta la transparencia (0.1 es muy transparente, 1 es sólido) */
+    opacity: 1; 
+    /* Esto es muy importante para que el fondo no bloquee los clics en tus botones */
+    pointer-events: none; 
+    /* Envía la imagen al fondo, detrás de todo */
+    z-index: -1; 
+}
+
 /* 2. NAVEGACIÓN
    ========================================= */
 nav {
@@ -330,6 +351,36 @@ nav div a:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* Contenedor relativo para que la marca de agua no se salga de la foto */
+.contenedor-imagen-modal {
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    max-height: 90vh; /* Evita que la foto sea más alta que la pantalla */
+}
+
+/* Estilos de la marca de agua sobre la imagen ampliada */
+.marca-agua-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Pon aquí la ruta del logo que quieres usar */
+    background-image: url('img/logo.jpeg'); 
+    background-repeat: no-repeat;
+    background-position: bottom 20px right 20px;
+    background-size: 25%; /* Tamaño de la marca de agua respecto a la foto */
+    opacity: 0.95  ; /* 0.4 se nota bastante pero deja ver el arreglo, ajusta a tu gusto */
+    pointer-events: none; /* Permite que el clic pase a través para cerrar el modal */
+    z-index: 10; /* Lo mantiene por encima de la foto */
+}
+
+
+
 /* 9. RESPONSIVE
    ========================================= */
 @media (max-width: 768px) {
@@ -339,4 +390,63 @@ nav div a:hover {
     .hero h1 { font-size: 45px; }
     .galeria { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
     .subtitulo { font-size: 1.5rem; padding: 10px 20px; }
+}
+
+/* =======================================================
+   10. MODAL (ZOOM DE IMÁGENES)
+   ======================================================= */
+/* Fondo oscuro que cubre toda la pantalla */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 2000; /* Por encima del menú de navegación */
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo negro semitransparente */
+    backdrop-filter: blur(5px); /* Efecto elegante de desenfoque */
+}
+
+/* La imagen ampliada */
+.modal-contenido {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    object-fit: contain;
+}
+
+/* Efecto suave de aparición (Zoom In) */
+.modal-contenido, .marca-agua-modal {
+    animation-name: zoom;
+    animation-duration: 0.3s;
+}
+
+@keyframes zoom {
+    from { transform: scale(0.8); opacity: 0; } 
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* El botón de cerrar (la X) */
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 3000;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+    color: #ff4081; /* Cambia al tono rosa de tu tema al pasar el mouse */
+    text-decoration: none;
+    cursor: pointer;
 }

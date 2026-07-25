@@ -10,7 +10,6 @@
 <body>
 
 <nav>
-    
     <h2>Dulce Antojo</h2>
     <div class="menu">
         <a href="index.html">Inicio</a>
@@ -217,10 +216,16 @@
 <footer style="text-align: center; padding: 40px; color: #ff4d6d;">
     <p>&copy; 2026 Dulce Antojo - Hecho con amor ❤️</p>
 </footer>
+
+<!-- Modal con marca de agua para proteger la imagen -->
 <div id="modalImagen" class="modal" onclick="this.style.display='none'">
-        <span class="cerrar">&times;</span>
-        <img class="modal-contenido" id="imgGrande">
+    <span class="cerrar">&times;</span>
+    <div class="contenedor-imagen-modal">
+        <!-- El oncontextmenu evita que den clic derecho para guardar la imagen -->
+        <img class="modal-contenido" id="imgGrande" oncontextmenu="return false;">
+        <div class="marca-agua-modal"></div>
     </div>
+</div>
     
 <a href="https://wa.me/573147767322?text=Hola!%20Deseo%20más%20información%20sobre%20tus%20detalles" 
    class="whatsapp-float" 
@@ -229,7 +234,7 @@
     <span class="tooltip-whatsapp">¡Pide aquí! ✿</span>
 </a>
     
-    <script>
+<script>
     // Seleccionamos todas las imágenes dentro de las tarjetas de productos
     const imagenesGaleria = document.querySelectorAll('.producto-card img');
     const elModal = document.getElementById("modalImagen");
