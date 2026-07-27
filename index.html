@@ -30,9 +30,9 @@
         </a>
     </div>
 </section>
+
 <div style="text-align: center; padding: 40px 20px 20px;">
     <h1 class="titulo" style="font-family: 'Playfair Display', serif; color: #f57f17; font-size: 2.5rem;">Cajas & Detalles de Primavera</h1>
-
     <p class="subtitulo" style="margin-top: 10px;">
         <i class="fas fa-sun"></i> 
         Regala un detalle que nunca olvidarán 
@@ -40,7 +40,37 @@
     </p>
 </div>
 
+<section class="seccion-galeria">
+    <h2 class="titulo-galeria">Nuestra Galería de Momentos</h2>
+    <p class="subtitulo-galeria">Un vistazo a nuestros mejores detalles y entregas (Haz clic en las fotos para ampliar)</p>
 
+    <div class="galeria-grid">
+        <!-- Imagen 1 -->
+        <div class="galeria-item">
+            <img src="img/tendencia/tendencia-1.jpeg" alt="Detalle Dulce Antojo" class="img-zoomable" loading="lazy">
+        </div>
+        <!-- Imagen 2 -->
+        <div class="galeria-item">
+            <img src="img/tendencia/tendencia-2.jpeg" alt="Detalle Dulce Antojo" class="img-zoomable" loading="lazy">
+        </div>
+        <!-- Imagen 3 -->
+        <div class="galeria-item">
+            <img src="img/tendencia/tendencia-3.jpeg" alt="Detalle Dulce Antojo" class="img-zoomable" loading="lazy">
+        </div>
+        <!-- Imagen 4 -->
+        <div class="galeria-item">
+            <img src="img/tendencia/tendencia-4.jpeg" alt="Detalle Dulce Antojo" class="img-zoomable" loading="lazy">
+        </div>
+        <!-- Imagen 5 -->
+        <div class="galeria-item">
+            <img src="img/tendencia/tendencia-5.jpeg" alt="Detalle Dulce Antojo" class="img-zoomable" loading="lazy">
+        </div>
+        <!-- Imagen 6 -->
+        <div class="galeria-item">
+            <img src="img/tendencia/tendencia-6.jpeg" alt="Detalle Dulce Antojo" class="img-zoomable" loading="lazy">
+        </div>
+    </div>
+</section>
 
 <h2 class="subtitulo">Nuestros Detalles</h2>
 
@@ -76,8 +106,17 @@
             <span class="precio">Ver Diseños</span>
         </div>
     </a>
-
 </section>
+
+
+
+<div id="modalImagen" class="modal">
+    <span class="cerrar">&times;</span>
+    <div class="contenedor-imagen-modal">
+        <img class="modal-contenido" id="imgGrande" oncontextmenu="return false;">
+        <div class="marca-agua-modal"></div>
+    </div>
+</div>
 
 <footer>
     <p style="text-align: center; padding: 40px; color: #6a4c93; font-family: 'Playfair Display', serif;">
@@ -85,12 +124,59 @@
     </p>
 </footer>
 
-    <a href="https://wa.me/573147767322?text=Hola!%20Deseo%20más%20información%20sobre%20tus%20detalles" 
+<a href="https://wa.me/573147767322?text=Hola!%20Deseo%20más%20información%20sobre%20tus%20detalles" 
    class="whatsapp-float" 
    target="_blank">
     <i class="fab fa-whatsapp"></i>
     <span class="tooltip-whatsapp">¡Pide aquí! ✿</span>
 </a>
-    
+
+<script>
+function moverImagenCard(idCarrusel, direccion) {
+    const carrusel = document.getElementById(idCarrusel);
+    if(carrusel) {
+        const anchoTarjeta = carrusel.clientWidth; 
+        carrusel.scrollBy({
+            left: direccion * anchoTarjeta,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Lógica completa de Zoom (Modal) para las fotos de la galería
+const elModal = document.getElementById("modalImagen");
+if (elModal) {
+    const imagenesGaleria = document.querySelectorAll('.galeria-grid .galeria-item img, .producto-card img');
+    const imagenGrande = document.getElementById("imgGrande");
+    const btnCerrar = document.querySelector(".cerrar");
+
+    imagenesGaleria.forEach(img => {
+        img.style.cursor = "pointer"; // Muestra el cursor de que se puede hacer clic
+        img.onclick = function() {
+            elModal.style.display = "flex";
+            imagenGrande.src = this.src;
+        }
+    });
+
+    if (btnCerrar) {
+        btnCerrar.onclick = function() {
+            elModal.style.display = "none";
+        }
+    }
+
+    elModal.onclick = function(e) {
+        if (e.target === elModal) {
+            elModal.style.display = "none";
+        }
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+            elModal.style.display = "none";
+        }
+    });
+}
+</script>
+
 </body>
 </html>

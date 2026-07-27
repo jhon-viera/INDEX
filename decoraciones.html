@@ -28,61 +28,7 @@
 
     <div class="subtitulo">Magia y color para tus eventos</div>
 
-    <section class="reels-carrusel" style="padding-top: 0;"> 
-        <div class="reels-track">
-            <div class="reel-card">
-                <video autoplay muted loop playsinline><source src="img/amarillo/video-1.mp4" type="video/mp4"></video>
-                <div class="reel-tag">Detalle </div>
-                <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.8); padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; color: #f57f17;">$47.000</div>
-            </div>
-          
-            <div class="reel-card">
-                <video autoplay muted loop playsinline><source src="img/amarillo/video-2.mp4" type="video/mp4"></video>
-                <div class="reel-tag">Amor</div>
-                <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.8); padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; color: #f57f17;">$50.000</div>
-            </div>
-            
-            <div class="reel-card">
-                <video autoplay muted loop playsinline><source src="img/amarillo/video-3.mp4" type="video/mp4"></video>
-                <div class="reel-tag">Aniversario</div>
-                <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.8); padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; color: #f57f17;">$45.000</div>
-            </div>
-
-            <div class="reel-card">
-                <video autoplay muted loop playsinline><source src="img/amarillo/video-4.mp4" type="video/mp4"></video>
-                <div class="reel-tag">Aniversario</div>
-                <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.8); padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; color: #f57f17;">$40.000</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="reels-carrusel" style="padding-top: 0;"> 
-        <div class="reels-track">
-            <div class="reel-card">
-                <video autoplay muted loop playsinline><source src="img/amarillo/video-5.mp4" type="video/mp4"></video>
-                <div class="reel-tag">Aniversario</div>
-                <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.8); padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; color: #f57f17;">$27.000</div>
-            </div>
-          
-            <div class="reel-card">
-                <video autoplay muted loop playsinline><source src="img/amarillo/video-6.mp4" type="video/mp4"></video>
-                <div class="reel-tag">Amor</div>
-                <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.8); padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; color: #f57f17;">$65.000</div>
-            </div>
-            
-            <div class="reel-card">
-                <video autoplay muted loop playsinline><source src="img/amarillo/video-7.mp4" type="video/mp4"></video>
-                <div class="reel-tag">Aniversario</div>
-                <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.8); padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; color: #f57f17;">$38.000</div>
-            </div>
-
-            <div class="reel-card">
-                <video autoplay muted loop playsinline><source src="img/amarillo/video-4.mp4" type="video/mp4"></video>
-                <div class="reel-tag">Aniversario</div>
-                <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.8); padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; color: #f57f17;">$40.000</div>
-            </div>
-        </div>
-    </section>
+    
 
     <section class="galeria">
         
@@ -223,6 +169,26 @@
             </div>
         </div>
 
+        <div class="producto-card" style="position: relative; overflow: hidden;">
+    <!-- Contenedor del carrusel interno de imágenes -->
+    <div class="card-img-carrusel" id="carruselDetalle14" style="display: flex; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; width: 100%; height: 250px; scroll-snap-type: x mandatory;">
+        <img src="img/decoracion/decoracion-a1.jpeg" alt="Detalle 14 - Vista 1" loading="lazy" style="flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: start;">
+        <img src="img/decoracion/decoracion-a2.jpeg" alt="Detalle 14 - Vista 2" loading="lazy" style="flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: start;">
+    </div>
+
+    <!-- Botones de flecha flotantes para cambiar de imagen -->
+    <button onclick="moverImagenCard('carruselDetalle14', -1)" style="position: absolute; top: 35%; left: 10px; transform: translateY(-50%); background: rgba(255,255,255,0.8); border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; z-index: 5; color: #f57f17; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"><i class="fas fa-chevron-left"></i></button>
+    
+    <button onclick="moverImagenCard('carruselDetalle14', 1)" style="position: absolute; top: 35%; right: 10px; transform: translateY(-50%); background: rgba(255,255,255,0.8); border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; z-index: 5; color: #f57f17; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"><i class="fas fa-chevron-right"></i></button>
+
+    <!-- Información del producto -->
+    <div class="info-producto">
+        <h3>Detalle Caja De Animales</h3>
+        <span style="display: block; font-weight: bold; color: #f57f17; margin-bottom: 5px;">$80.000</span>
+        <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20DETALLE%2014" class="btn-pedido">Pedir por WhatsApp</a>
+    </div>
+</div>
+
     </section>
 
     <!-- Modal con estructura completa, contenedor y protección de marca de agua -->
@@ -247,6 +213,15 @@
     const elModal = document.getElementById("modalImagen");
     const imagenGrande = document.getElementById("imgGrande");
     const btnCerrar = document.querySelector(".cerrar");
+
+    function moverImagenCard(idCarrusel, direccion) {
+    const carrusel = document.getElementById(idCarrusel);
+    const anchoTarjeta = carrusel.clientWidth; // Toma el ancho exacto de la tarjeta
+    carrusel.scrollBy({
+        left: direccion * anchoTarjeta,
+        behavior: 'smooth'
+    });
+}
 
     // Función para abrir el zoom
     imagenesGaleria.forEach(img => {

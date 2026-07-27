@@ -450,3 +450,117 @@ nav div a:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+.seccion-galeria {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-galeria {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #f57f17;
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+.subtitulo-galeria {
+    text-align: center;
+    color: #6a4c93;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* Cuadrícula adaptable automáticamente */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Estilo individual de cada tarjeta de imagen */
+.galeria-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    height: 250px; /* Altura fija para que todas las fotos guarden uniformidad */
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la foto se deforme */
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+/* Efecto zoom elegante al pasar el cursor */
+.galeria-item:hover img {
+    transform: scale(1.08);
+}
+
+/* Estilos del Modal de Zoom */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro transparente */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-contenido-container {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+.modal-contenido-container img {
+    width: 100%;
+    height: auto;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+}
+
+/* Botón de cerrar (X) */
+.modal .cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1010;
+    transition: color 0.3s;
+}
+
+.modal .cerrar:hover {
+    color: #f57f17;
+}
+
+/* Estilo de la marca de agua / logo flotante sobre la foto ampliada */
+.modal-logo-marca {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    pointer-events: none; /* Evita que estorbe al hacer clic */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
