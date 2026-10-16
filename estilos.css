@@ -1,14 +1,46 @@
 /* =======================================================
-   DULCE ANTOJO - EDICIÓN AMOR Y AMISTAD ❤️✨
-   Diseño: Romántico, Elegante y Dulce
-   Conservado: Imágenes Cuadradas y Botones de Contacto
+   DULCE ANTOJO — Hoja de estilos
+   Paleta tomada del logo: ciruela, rosa y un toque dorado
+   sobre un fondo crema suave.
    ======================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Nunito:wght@400;600;700;800&display=swap');
 
-/* 1. RESET Y BASE
+/* 1. VARIABLES
    ========================================= */
-* {
+:root {
+    --crema: #fdf8f4;
+    --crema-2: #f8efe8;
+    --blanco: #ffffff;
+    --rosa-claro: #fde8ef;
+    --rosa: #e2477d;
+    --rosa-oscuro: #b92a5e;
+    --ciruela: #4b2569;
+    --ciruela-2: #6b3d8f;
+    --lila: #efe6f7;
+    --oro: #e9a640;
+    --tinta: #2d2232;
+    --texto: #5c5062;
+    --texto-suave: #8a7f8f;
+    --borde: #efe3ea;
+    --verde-wa: #25d366;
+    --verde-wa-osc: #1aa851;
+
+    --radio: 22px;
+    --radio-sm: 14px;
+    --sombra: 0 6px 22px rgba(75, 37, 105, 0.08);
+    --sombra-hover: 0 16px 36px rgba(75, 37, 105, 0.16);
+    --ancho: 1240px;
+
+    --f-titulo: 'Fraunces', Georgia, serif;
+    --f-texto: 'Nunito', system-ui, -apple-system, sans-serif;
+}
+
+/* 2. BASE
+   ========================================= */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,159 +48,577 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    /* Fondo con un tono rosa muy suave y un patrón sutil elegante */
-    background-color: #fff0f5; 
-    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-    color: #4a4a4a;
-    overflow-x: hidden;
+    font-family: var(--f-texto);
+    font-size: 16px;
     line-height: 1.6;
+    color: var(--texto);
+    background-color: var(--crema);
+    background-image:
+        radial-gradient(circle at 8% 12%, rgba(226, 71, 125, 0.07) 0, transparent 32%),
+        radial-gradient(circle at 92% 30%, rgba(107, 61, 143, 0.07) 0, transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(233, 166, 64, 0.06) 0, transparent 40%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Cambia la ruta por la de tu logo o imagen */
-    background-image: url('img/logo.jpeg'); 
-    background-repeat: no-repeat;
-    background-position: center center;
-    /* Ajusta el tamaño de la marca de agua. Puedes usar 'contain' o un porcentaje como '50%' */
-    background-size: 40%; 
-    /* Ajusta la transparencia (0.1 es muy transparente, 1 es sólido) */
-    opacity: 1; 
-    /* Esto es muy importante para que el fondo no bloquee los clics en tus botones */
-    pointer-events: none; 
-    /* Envía la imagen al fondo, detrás de todo */
-    z-index: -1; 
+img,
+video {
+    max-width: 100%;
+    display: block;
 }
 
-/* 2. NAVEGACIÓN
+a {
+    color: inherit;
+}
+
+h1, h2, h3 {
+    font-family: var(--f-titulo);
+    color: var(--ciruela);
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+/* 3. NAVEGACIÓN
    ========================================= */
-nav {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 15px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 15px rgba(216, 27, 96, 0.1); 
-    border-bottom: 3px solid #ff4081; /* Borde rosa romántico */
+.barra {
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px max(20px, calc((100% - var(--ancho)) / 2));
+    background: rgba(253, 248, 244, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--borde);
 }
 
-nav h2 {
-    font-family: 'Playfair Display', serif;
-    color: #d81b60;
-    font-size: 32px;
-    letter-spacing: 1px;
-}
-
-nav div a {
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     text-decoration: none;
-    margin-left: 20px;
-    color: #555;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
-nav div a:hover {
-    color: #d81b60;
-    transform: translateY(-2px);
+.marca img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--blanco);
+    box-shadow: 0 3px 10px rgba(75, 37, 105, 0.18);
 }
 
-/* 3. HERO SECTION
+.marca span {
+    font-family: var(--f-titulo);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ciruela);
+    letter-spacing: -0.01em;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--texto);
+    padding: 8px 14px;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.menu a:hover {
+    background: var(--rosa-claro);
+    color: var(--rosa-oscuro);
+}
+
+.menu a.activo {
+    background: var(--ciruela);
+    color: var(--blanco);
+}
+
+/* 4. HERO (portada)
    ========================================= */
 .hero {
-    height: 50vh;
-    margin: 15px;
-    /* Imagen de fondo temática de Amor y Amistad */
-    background: linear-gradient(rgba(216, 27, 96, 0.4), rgba(136, 14, 79, 0.6)),
-                url('https://images.unsplash.com/photo-1518192546895-64045698e131?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 4px solid #ffffff;
-    border-radius: 20px; /* Bordes más suaves y elegantes */
-    box-shadow: 0 10px 25px rgba(216, 27, 96, 0.2);
+    max-width: var(--ancho);
+    margin: 28px auto 0;
+    padding: 0 20px;
 }
 
 .hero h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: clamp(50px, 10vw, 90px);
-    color: #ffffff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.3), 0 0 20px rgba(255, 64, 129, 0.6);
-    text-align: center;
-    font-weight: 700;
-    /* Se quitó la rotación para un estilo más maduro y elegante */
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    letter-spacing: -0.02em;
 }
 
-/* 4. TÍTULOS Y DECORACIÓN
-   ========================================= */
-.subtitulo {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: #880e4f; /* Tono vino tinto / borgoña */
-    padding: 10px 40px;
-    margin: 40px auto;
-    display: block;
-    max-width: fit-content;
-    background: #ffffff;
-    border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(216, 27, 96, 0.15);
-    border: 1px solid #f8bbd0;
+.hero-texto {
+    font-size: 1.15rem;
+    margin-top: 16px;
+    max-width: 34em;
 }
 
-.subtitulo::before, 
-.subtitulo::after {
-    content: "❤️"; /* Cambiado a corazones */
-    margin: 0 12px;
-    font-size: 1.5rem;
-}
-
-/* 5. CARRUSEL DE VIDEOS (Reels)
-   ========================================= */
-.reels-carrusel {
-    width: 100%;
-    overflow-x: auto;
+.hero-botones {
     display: flex;
-    padding: 20px 0;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.hero-botones .btn-pedido {
+    width: auto;
+    padding: 15px 28px;
+    font-size: 1rem;
+}
+
+/* Portada principal: texto + fotos */
+.hero-inicio {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 48px;
+    min-height: 70vh;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.hero-inicio h1 em,
+.hero-inicio h1 i {
+    font-style: italic;
+    color: var(--rosa);
+}
+
+.hero-fotos {
+    position: relative;
+    height: 480px;
+}
+
+.hero-fotos img {
+    position: absolute;
+    object-fit: cover;
+    border-radius: var(--radio);
+    border: 8px solid var(--blanco);
+    box-shadow: var(--sombra-hover);
+}
+
+.hero-fotos .foto-a {
+    width: 64%;
+    height: 82%;
+    top: 0;
+    right: 4%;
+    transform: rotate(3deg);
+}
+
+.hero-fotos .foto-b {
+    width: 54%;
+    height: 58%;
+    bottom: 0;
+    left: 2%;
+    transform: rotate(-5deg);
+}
+
+/* Portada tipo banda con foto de fondo (Decoraciones) */
+.hero-banda {
+    display: flex;
+}
+
+.hero-banda .hero-content {
+    width: 100%;
+    min-height: 42vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    border-radius: 28px;
+    background:
+        linear-gradient(180deg, rgba(45, 34, 50, 0.05) 20%, rgba(75, 37, 105, 0.85) 100%),
+        var(--hero-img, none) center / cover no-repeat;
+    box-shadow: var(--sombra-hover);
+}
+
+.hero-banda h1,
+.hero-banda .hero-texto {
+    color: var(--blanco);
+}
+
+.hero-banda .etiqueta {
+    background: rgba(255, 255, 255, 0.92);
+    align-self: flex-start;
+}
+
+/* 5. ENCABEZADOS DE SECCIÓN
+   ========================================= */
+.encabezado {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 20px 24px;
+}
+
+.etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rosa-oscuro);
+    background: var(--rosa-claro);
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+}
+
+.titulo,
+.titulo-floral {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    letter-spacing: -0.02em;
+    color: var(--ciruela);
+}
+
+.subtitulo {
+    font-family: var(--f-texto);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--texto);
+    text-align: center;
+    max-width: 640px;
+    margin: 14px auto 8px;
+    padding: 0 20px;
+}
+
+.subtitulo i,
+.subtitulo-resaltado i {
+    color: var(--rosa);
+    font-size: 0.85em;
+    margin: 0 6px;
+}
+
+/* Subtítulos sueltos entre secciones (Cajas y Detalles) */
+body > .subtitulo,
+body > .subtitulo-solo {
+    font-family: var(--f-titulo);
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    font-weight: 600;
+    color: var(--ciruela);
+    margin-top: 48px;
+    margin-bottom: 8px;
+}
+
+.subtitulo-resaltado {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 12px auto 0;
+    padding: 10px 20px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 999px;
+    font-weight: 600;
+    color: var(--texto);
+    box-shadow: var(--sombra);
+}
+
+.subtitulo-galeria {
+    color: var(--texto);
+    font-size: 1.05rem;
+    margin-top: 12px;
+}
+
+/* 6. GALERÍA DE INICIO
+   ========================================= */
+.seccion-galeria {
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    padding-bottom: 10px;
+}
+
+.galeria-item {
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radio);
+    overflow: hidden;
+    background: var(--crema-2);
+    box-shadow: var(--sombra);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+    transition: transform 0.5s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.06);
+}
+
+/* 7. CATÁLOGO DE PRODUCTOS
+   ========================================= */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 26px;
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 24px 20px 70px;
+}
+
+.producto-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--blanco);
+    border-radius: var(--radio);
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    container-type: inline-size;
+    text-decoration: none;
+}
+
+.producto-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-hover);
+}
+
+.producto-card > img,
+.producto-card > video {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    cursor: zoom-in;
+    background: var(--crema-2);
+}
+
+.info-producto {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    padding: 18px 20px 20px;
+    text-align: left;
+}
+
+.info-producto h3 {
+    font-size: 1.25rem;
+    color: var(--tinta);
+}
+
+.info-producto h3::first-letter {
+    text-transform: uppercase;
+}
+
+.info-producto p {
+    font-size: 0.93rem;
+    color: var(--texto-suave);
+    line-height: 1.5;
+}
+
+.info-producto .btn-pedido {
+    margin-top: auto;
+}
+
+/* Tarjetas de categoría en el inicio */
+.categoria-card > img {
+    cursor: pointer;
+}
+
+.categoria-card .info-producto {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.ver-mas {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: var(--rosa);
+    white-space: nowrap;
+    transition: gap 0.2s ease;
+}
+
+.categoria-card:hover .ver-mas {
+    gap: 10px;
+}
+
+/* Carrusel de fotos dentro de una tarjeta */
+.card-img-carrusel {
+    display: flex;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     scrollbar-width: none;
+    background: var(--crema-2);
+}
+
+.card-img-carrusel::-webkit-scrollbar {
+    display: none;
+}
+
+.card-img-carrusel img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-align: start;
+    cursor: zoom-in;
+}
+
+.card-flecha {
+    position: absolute;
+    top: calc(50cqw - 17px);
+    z-index: 5;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--ciruela);
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.card-flecha:hover {
+    background: var(--ciruela);
+    color: var(--blanco);
+}
+
+.card-flecha.izq { left: 12px; }
+.card-flecha.der { right: 12px; }
+
+/* 8. BOTONES
+   ========================================= */
+.btn-pedido {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--rosa), var(--rosa-oscuro));
+    color: var(--blanco);
+    font-family: var(--f-texto);
+    font-weight: 800;
+    font-size: 0.95rem;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(185, 42, 94, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    cursor: pointer;
+}
+
+.info-producto .btn-pedido::before {
+    content: "\f232";
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+    font-size: 1.1em;
+}
+
+.btn-pedido:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+    box-shadow: 0 10px 22px rgba(185, 42, 94, 0.34);
+}
+
+.btn-pedido:active {
+    transform: translateY(1px);
+}
+
+.btn-secundario {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 28px;
+    border-radius: 999px;
+    border: 2px solid var(--ciruela);
+    color: var(--ciruela);
+    font-weight: 800;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-secundario:hover {
+    background: var(--ciruela);
+    color: var(--blanco);
+}
+
+/* 9. CARRUSEL DE VIDEOS
+   ========================================= */
+.reels-carrusel-container {
+    position: relative;
+    max-width: var(--ancho);
+    margin: 10px auto 0;
+    padding: 0 56px;
+}
+
+.reels-carrusel {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    padding: 12px 4px 20px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.reels-carrusel::-webkit-scrollbar {
+    display: none;
 }
 
 .reels-track {
     display: flex;
-    gap: 20px;
-    padding: 0 8%;
+    gap: 18px;
+    width: max-content;
 }
 
 .reel-card {
-    min-width: 160px;
-    height: 280px;
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
     position: relative;
-    border: 2px solid #f8bbd0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
+    flex: 0 0 auto;
+    width: 190px;
+    aspect-ratio: 9 / 16;
+    border-radius: var(--radio);
+    overflow: hidden;
+    background: var(--tinta);
+    box-shadow: var(--sombra);
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .reel-card:hover {
-    transform: translateY(-8px);
-    border-color: #ff4081;
-    box-shadow: 0 10px 20px rgba(255, 64, 129, 0.2);
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-hover);
 }
 
 .reel-card video {
@@ -177,127 +627,98 @@ nav div a:hover {
     object-fit: cover;
 }
 
-/* 6. GALERÍA DE PRODUCTOS (Corregida a Cuadrada - Mantenida)
+.reel-tag {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--ciruela);
+    font-size: 0.8rem;
+    font-weight: 800;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--borde);
+    border-radius: 50%;
+    background: var(--blanco);
+    color: var(--ciruela);
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: var(--sombra);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.carrusel-btn:hover {
+    background: var(--ciruela);
+    color: var(--blanco);
+}
+
+.carrusel-prev { left: 0; }
+.carrusel-next { right: 0; }
+
+/* 10. CONTACTO
    ========================================= */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
-    padding: 20px 8% 60px 8%;
-}
-
-.producto-card {
-    background: #ffffff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid #fce4ec;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.producto-card:hover {
-    border-color: #ff4081;
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(216, 27, 96, 0.15);
-}
-
-/* Imágenes Cuadradas (Conservadas) */
-.producto-card img, 
-.producto-card video {
-    width: 100%;
-    height: auto; 
-    aspect-ratio: 1 / 1; 
-    object-fit: cover; 
-    display: block;
-    cursor: zoom-in;
-}
-
-.info-producto {
-    padding: 20px 15px;
+.contacto-container {
+    max-width: 520px;
+    margin: 56px auto 0;
+    padding: 44px 28px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 28px;
+    box-shadow: var(--sombra);
     text-align: center;
 }
 
-.info-producto h3 {
-    font-family: 'Playfair Display', serif;
-    color: #4a4a4a;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+.contacto-header .subtitulo {
+    margin-top: 10px;
 }
 
-.precio {
-    font-family: 'Poppins', sans-serif;
-    color: #d81b60;
-    font-size: 1.4rem;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 15px;
-}
-
-/* 7. BOTONES
-   ========================================= */
-.btn-pedido {
-    text-decoration: none;
-    /* Gradiente romántico */
-    background: linear-gradient(135deg, #ff4081, #c51162);
-    color: #ffffff;
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-weight: 600;
-    display: inline-block;
-    width: 100%;
-    border: none;
-    box-shadow: 0 4px 10px rgba(197, 17, 98, 0.3);
-    transition: all 0.2s ease;
-    text-align: center;
-    letter-spacing: 0.5px;
-}
-
-.btn-pedido:hover {
-    background: linear-gradient(135deg, #f50057, #880e4f);
-    box-shadow: 0 6px 15px rgba(197, 17, 98, 0.4);
-}
-
-.btn-pedido:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 5px rgba(197, 17, 98, 0.3);
-}
-
-/* 8. REDES SOCIALES Y CONTACTO (INTACTO - COPIA EXACTA)
-   ========================================= */
 .redes-sociales {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    align-items: center;
+    gap: 14px;
     margin-top: 30px;
-    padding-bottom: 30px;
 }
 
 .social-btn {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 250px;
-    padding: 12px;
-    border-radius: 50px; /* Redondeado completo como antes */
+    gap: 14px;
+    padding: 10px 22px 10px 10px;
+    border-radius: 999px;
+    color: var(--blanco) !important;
     text-decoration: none !important;
-    color: white !important;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid rgba(255,255,255,0.3);
+    font-weight: 800;
+    font-size: 1.05rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.social-btn i {
-    font-size: 1.5rem;
-    margin-right: 10px;
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
-/* Gradientes originales restaurados */
+.icon-box {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 1.35rem;
+}
+
 .whatsapp {
-    background: linear-gradient(45deg, #4caf50, #2e7d32); 
+    background: linear-gradient(135deg, var(--verde-wa), var(--verde-wa-osc));
 }
 
 .instagram {
@@ -305,262 +726,326 @@ nav div a:hover {
 }
 
 .tiktok {
-    background: linear-gradient(45deg, #424242, #000000);
+    background: linear-gradient(135deg, #2b2b2b, #000000);
 }
 
-.social-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+/* 11. PIE DE PÁGINA
+   ========================================= */
+.pie {
+    margin-top: 70px;
+    padding: 50px 20px 36px;
+    background: var(--ciruela);
+    color: rgba(255, 255, 255, 0.78);
+    text-align: center;
+    border-radius: 36px 36px 0 0;
 }
 
-/* Boton de WhatsApp flotante (Original) */
+.pie-marca {
+    font-family: var(--f-titulo);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--blanco);
+    margin-bottom: 4px;
+}
+
+.pie-redes {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.pie-redes a {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--blanco);
+    font-size: 1.15rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.pie-redes a:hover {
+    background: var(--rosa);
+    transform: translateY(-2px);
+}
+
+.pie-copy {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* 12. BOTÓN FLOTANTE DE WHATSAPP
+   ========================================= */
 .whatsapp-float {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #4caf50 !important;
-    border: 3px solid #fff !important;
-    border-radius: 50px;
-    width: 60px;
-    height: 60px;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1500;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-    text-decoration: none !important;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: var(--verde-wa);
+    color: var(--blanco);
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.whatsapp-float::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid var(--verde-wa);
+    animation: latido 2.4s ease-out infinite;
 }
 
 .whatsapp-float:hover {
-    background-color: #2e7d32 !important;
-    transform: scale(1.1);
+    background: var(--verde-wa-osc);
+    transform: scale(1.08);
 }
 
 .tooltip-whatsapp {
     position: absolute;
-    right: 70px;
-    background: #2196f3;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 10px;
-    font-size: 14px;
-    white-space: nowrap;
-    border: 1px solid #bbdefb;
-    pointer-events: none;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Contenedor relativo para que la marca de agua no se salga de la foto */
-.contenedor-imagen-modal {
-    position: relative;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 90%;
-    max-height: 90vh; /* Evita que la foto sea más alta que la pantalla */
-}
-
-/* Estilos de la marca de agua sobre la imagen ampliada */
-.marca-agua-modal {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Pon aquí la ruta del logo que quieres usar */
-    background-image: url('img/logo.jpeg'); 
-    background-repeat: no-repeat;
-    background-position: bottom 20px right 20px;
-    background-size: 25%; /* Tamaño de la marca de agua respecto a la foto */
-    opacity: 0.95  ; /* 0.4 se nota bastante pero deja ver el arreglo, ajusta a tu gusto */
-    pointer-events: none; /* Permite que el clic pase a través para cerrar el modal */
-    z-index: 10; /* Lo mantiene por encima de la foto */
-}
-
-
-
-/* 9. RESPONSIVE
-   ========================================= */
-@media (max-width: 768px) {
-    nav { flex-direction: column; gap: 10px; }
-    nav h2 { font-size: 28px; }
-    .hero { height: 40vh; }
-    .hero h1 { font-size: 45px; }
-    .galeria { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
-    .subtitulo { font-size: 1.5rem; padding: 10px 20px; }
-}
-
-/* =======================================================
-   10. MODAL (ZOOM DE IMÁGENES)
-   ======================================================= */
-/* Fondo oscuro que cubre toda la pantalla */
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    z-index: 2000; /* Por encima del menú de navegación */
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); /* Fondo negro semitransparente */
-    backdrop-filter: blur(5px); /* Efecto elegante de desenfoque */
-}
-
-/* La imagen ampliada */
-.modal-contenido {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-    object-fit: contain;
-}
-
-/* Efecto suave de aparición (Zoom In) */
-.modal-contenido, .marca-agua-modal {
-    animation-name: zoom;
-    animation-duration: 0.3s;
-}
-
-@keyframes zoom {
-    from { transform: scale(0.8); opacity: 0; } 
-    to { transform: scale(1); opacity: 1; }
-}
-
-/* El botón de cerrar (la X) */
-.cerrar {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-    z-index: 3000;
-}
-
-.cerrar:hover,
-.cerrar:focus {
-    color: #ff4081; /* Cambia al tono rosa de tu tema al pasar el mouse */
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.seccion-galeria {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.titulo-galeria {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    color: #f57f17;
-    font-size: 2.3rem;
-    margin-bottom: 10px;
-}
-
-.subtitulo-galeria {
-    text-align: center;
-    color: #6a4c93;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-}
-
-/* Cuadrícula adaptable automáticamente */
-.galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* Estilo individual de cada tarjeta de imagen */
-.galeria-item {
+    right: 74px;
+    padding: 8px 14px;
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    height: 250px; /* Altura fija para que todas las fotos guarden uniformidad */
+    background: var(--ciruela);
+    color: var(--blanco);
+    font-family: var(--f-texto);
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: var(--sombra);
+    pointer-events: none;
 }
 
-.galeria-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Evita que la foto se deforme */
-    transition: transform 0.4s ease;
-    display: block;
+@keyframes latido {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(1.6); opacity: 0; }
 }
 
-/* Efecto zoom elegante al pasar el cursor */
-.galeria-item:hover img {
-    transform: scale(1.08);
-}
-
-/* Estilos del Modal de Zoom */
+/* 13. MODAL (ZOOM DE IMÁGENES)
+   ========================================= */
 .modal {
-    display: none; /* Oculto por defecto */
+    display: none; /* el script lo cambia a flex */
     position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro transparente */
+    inset: 0;
+    z-index: 2000;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    background: rgba(30, 18, 38, 0.88);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
-.modal-contenido-container {
+.contenedor-imagen-modal {
     position: relative;
-    max-width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 92%;
     max-height: 90vh;
 }
 
-.modal-contenido-container img {
-    width: 100%;
-    height: auto;
-    max-height: 85vh;
+.modal-contenido {
+    display: block;
+    max-width: 100%;
+    max-height: 86vh;
     object-fit: contain;
-    border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-/* Botón de cerrar (X) */
-.modal .cerrar {
+/* Marca de agua del logo sobre la foto ampliada */
+.marca-agua-modal {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
+    inset: 0;
+    background: url('img/logo.jpeg') no-repeat bottom 16px right 16px / 22%;
+    opacity: 0.92;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.modal-contenido,
+.marca-agua-modal {
+    animation: zoom 0.3s ease;
+}
+
+@keyframes zoom {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.cerrar {
+    position: absolute;
+    top: 18px;
+    right: 26px;
+    z-index: 3000;
+    color: var(--blanco);
+    font-size: 44px;
+    line-height: 1;
     cursor: pointer;
-    z-index: 1010;
-    transition: color 0.3s;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.modal .cerrar:hover {
-    color: #f57f17;
+.cerrar:hover {
+    color: var(--rosa);
+    transform: rotate(90deg);
 }
 
-/* Estilo de la marca de agua / logo flotante sobre la foto ampliada */
-.modal-logo-marca {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-family: 'Playfair Display', serif;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    pointer-events: none; /* Evita que estorbe al hacer clic */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+/* 14. RESPONSIVE
+   ========================================= */
+@media (max-width: 900px) {
+    .barra {
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .menu {
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding-bottom: 2px;
+    }
+
+    .menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .hero-inicio {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 28px;
+        min-height: 0;
+    }
+
+    .hero-inicio .hero-texto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-botones {
+        justify-content: center;
+    }
+
+    .hero-fotos {
+        height: 380px;
+        max-width: 480px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    html {
+        scroll-padding-top: 130px;
+    }
+}
+
+@media (max-width: 600px) {
+    .marca img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .marca span {
+        font-size: 1.3rem;
+    }
+
+    .hero-fotos {
+        height: 300px;
+    }
+
+    .hero-banda .hero-content {
+        padding: 26px;
+    }
+
+    .encabezado {
+        padding-top: 40px;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        padding: 16px 14px 50px;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .info-producto {
+        padding: 12px 12px 14px;
+        gap: 6px;
+    }
+
+    .info-producto h3 {
+        font-size: 1.02rem;
+    }
+
+    .info-producto p {
+        font-size: 0.82rem;
+    }
+
+    .btn-pedido {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
+
+    .categoria-card .info-producto {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reels-carrusel-container {
+        padding: 0 14px;
+    }
+
+    .carrusel-btn {
+        display: none; /* en celular se desliza con el dedo */
+    }
+
+    .reel-card {
+        width: 150px;
+    }
+
+    .subtitulo-resaltado {
+        border-radius: 18px;
+        font-size: 0.92rem;
+    }
+
+    .tooltip-whatsapp {
+        display: none;
+    }
+
+    .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        font-size: 1.8rem;
+        right: 16px;
+        bottom: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
 }

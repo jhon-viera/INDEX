@@ -4,50 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dulce Antojo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <nav>
-        <h2>Dulce Antojo</h2>
-        <div class="menu">
-            <a href="index.html">Inicio</a>
-            <a href="bandeja.html">Bandejas</a>
-            <a href="cajas.html">Cajas</a>
-            <a href="decoraciones.html">Decoraciones</a>
-            <a href="detalles.html">Detalles</a>
-            <a href="alquiler.html">Alquiler</a> 
-            <a href="contacto.html">Contacto</a>
-        </div>
-    </nav>
+    <nav class="barra">
+    <a href="index.html" class="marca">
+        <img src="img/logo.jpeg" alt="Logo Dulce Antojo">
+        <span>Dulce Antojo</span>
+    </a>
+    <div class="menu">
+        <a href="index.html" class="activo">Inicio</a>
+        <a href="bandeja.html">Bandejas</a>
+        <a href="cajas.html">Cajas</a>
+        <a href="decoraciones.html">Decoraciones</a>
+        <a href="detalles.html">Detalles</a>
+        <a href="alquiler.html">Alquiler</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+</nav>
 
-    <section class="hero">
+    <section class="hero hero-inicio">
         <div class="hero-content">
-            <h1>Detalles Dulces que Enamoran</h1>
-            <a href="https://wa.me/573147767322" class="btn-pedido" style="display: inline-block; padding: 15px 30px; margin-top: 20px;">
-                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-            </a>
+            <span class="etiqueta"><i class="fas fa-heart"></i> Desayunos y detalles</span>
+            <h1>Detalles dulces que <em>enamoran</em></h1>
+            <p class="hero-texto">Regala un detalle que nunca olvidarán: bandejas, cajas, rosas y decoraciones hechas a mano, con un toque único para cada ocasión.</p>
+            <div class="hero-botones">
+                <a href="https://wa.me/573147767322" class="btn-pedido" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                </a>
+                <a href="#categorias" class="btn-secundario">Ver catálogo</a>
+            </div>
+        </div>
+        <div class="hero-fotos">
+            <img src="img/tendencia/tendencia-1.jpeg" alt="Caja de rosas Dulce Antojo" class="foto-a">
+            <img src="img/bandejas/BANDEJA 0.jpg" alt="Bandeja de desayuno sorpresa" class="foto-b">
         </div>
     </section>
 
-    <div style="text-align: center; padding: 40px 20px 20px;">
-        <p class="subtitulo" style="margin-top: 10px;">
-            <i class="fas fa-sun"></i> 
-            Regala un detalle que nunca olvidarán 
-            <i class="fas fa-sun"></i>
-        </p>
-    </div>
-
     <section class="seccion-galeria">
-        <div style="text-align: center; padding: 20px 20px 10px;">
-            <p class="subtitulo" style="margin-top: 10px;">
-                <i class="fas fa-sun"></i> 
-                Nuestra galería de obras de arte y detalles que hemos creado para nuestros clientes, cada uno con un toque único y especial.
-                <i class="fas fa-sun"></i>
-            </p>
+        <div class="encabezado">
+            <span class="etiqueta">Nuestra galería</span>
+            <h2 class="titulo">Obras de arte hechas detalle</h2>
+            <p class="subtitulo-galeria">Algunos de los detalles y entregas que hemos creado para nuestros clientes. Haz clic en las fotos para ampliarlas.</p>
         </div>
-        <p class="subtitulo-galeria">Un vistazo a nuestros mejores detalles y entregas (Haz clic en las fotos para ampliar)</p>
 
         <div class="galeria-grid">
             <!-- Imagen 1 -->
@@ -77,38 +80,41 @@
         </div>
     </section>
 
-    <h2 class="subtitulo" style="text-align: center; margin-top: 30px;">Nuestros Detalles</h2>
+    <div class="encabezado" id="categorias">
+        <span class="etiqueta">Catálogo</span>
+        <h2 class="titulo">Nuestros detalles</h2>
+    </div>
 
     <section class="galeria">
-        <a href="bandeja.html" class="producto-card" style="text-decoration: none;">
+        <a href="bandeja.html" class="producto-card categoria-card">
             <img src="img/bandejas/BANDEJA 0.jpg" alt="Bandejas" loading="lazy">
             <div class="info-producto">
                 <h3>Bandejas Personalizadas</h3>
-                <span class="precio">Ver Diseños</span>
+                <span class="ver-mas">Ver diseños <i class="fas fa-arrow-right"></i></span>
             </div>
         </a>
 
-        <a href="cajas.html" class="producto-card" style="text-decoration: none;">
+        <a href="cajas.html" class="producto-card categoria-card">
             <img src="img/cajas/CAJA5.jpg" alt="Cajas" loading="lazy">
             <div class="info-producto">
                 <h3>Cajas de Regalo</h3>
-                <span class="precio">Ver Diseños</span>
+                <span class="ver-mas">Ver diseños <i class="fas fa-arrow-right"></i></span>
             </div>
         </a>
 
-        <a href="decoraciones.html" class="producto-card" style="text-decoration: none;">
+        <a href="decoraciones.html" class="producto-card categoria-card">
             <img src="img/decoracion/DECORACION 7.jpg" alt="Decoraciones" loading="lazy">
             <div class="info-producto">
                 <h3>Decoraciones Especiales</h3>
-                <span class="precio">Ver Diseños</span>
+                <span class="ver-mas">Ver diseños <i class="fas fa-arrow-right"></i></span>
             </div>
         </a>
 
-        <a href="alquiler.html" class="producto-card" style="text-decoration: none;">
+        <a href="alquiler.html" class="producto-card categoria-card">
             <img src="img/alquiler/alquiler-2.jpeg" alt="Alquiler de Decoraciones" loading="lazy">
             <div class="info-producto">
                 <h3>Alquiler de Decoraciones</h3>
-                <span class="precio">Ver Diseños</span>
+                <span class="ver-mas">Ver diseños <i class="fas fa-arrow-right"></i></span>
             </div>
         </a>
     </section>
@@ -122,11 +128,16 @@
         </div>
     </div>
 
-    <footer>
-        <p style="text-align: center; padding: 40px; color: #6a4c93; font-family: 'Playfair Display', serif;">
-            Dulce Antojo &copy; 2026 - Detalles con el corazón
-        </p>
-    </footer>
+    <footer class="pie">
+    <p class="pie-marca">Dulce Antojo</p>
+    <p>Desayunos, detalles y decoraciones hechos con el corazón</p>
+    <div class="pie-redes">
+        <a href="https://wa.me/573147767322" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/dulce._.antojo00/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@dulce.antojo897" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <p class="pie-copy">&copy; 2026 Dulce Antojo</p>
+</footer>
 
     <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/573147767322?text=Hola!%20Deseo%20más%20información%20sobre%20tus%20detalles" 
@@ -151,7 +162,7 @@
         // Lógica completa de Zoom (Modal) para las fotos de la galería
         const elModal = document.getElementById("modalImagen");
         if (elModal) {
-            const imagenesGaleria = document.querySelectorAll('.galeria-grid .galeria-item img, .producto-card img');
+            const imagenesGaleria = document.querySelectorAll('.galeria-grid .galeria-item img');
             const imagenGrande = document.getElementById("imgGrande");
             const btnCerrar = document.querySelector(".cerrar");
 

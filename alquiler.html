@@ -4,37 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alquiler | Dulce Antojo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<nav>
-    <h2>Dulce Antojo</h2>
+<nav class="barra">
+    <a href="index.html" class="marca">
+        <img src="img/logo.jpeg" alt="Logo Dulce Antojo">
+        <span>Dulce Antojo</span>
+    </a>
     <div class="menu">
         <a href="index.html">Inicio</a>
         <a href="bandeja.html">Bandejas</a>
         <a href="cajas.html">Cajas</a>
         <a href="decoraciones.html">Decoraciones</a>
         <a href="detalles.html">Detalles</a>
-        <a href="alquiler.html">Alquiler</a> 
+        <a href="alquiler.html" class="activo">Alquiler</a>
         <a href="contacto.html">Contacto</a>
     </div>
 </nav>
 
-<h1 class="titulo" style="text-align: center;">Alquiler para Eventos</h1>
+<div class="encabezado">
+<h1 class="titulo">Alquiler para Eventos</h1>
 
-<p class="subtitulo-resaltado" style="text-align: center;">
+<p class="subtitulo-resaltado">
     <i class="fas fa-star"></i> 
     Alquiler de mobiliario y decoración premium para tus fiestas 
     <i class="fas fa-star"></i>
 </p>
 
-<p class="subtitulo-resaltado" style="text-align: center;">
+<p class="subtitulo-resaltado">
     <i class="fas fa-info-circle"></i> 
     Reserva con anticipación para asegurar la disponibilidad de tu fecha
     <i class="fas fa-info-circle"></i>
 </p>
+</div>
 
 <div class="galeria">
     
@@ -42,8 +49,8 @@
         <img src="img/alquiler/alquiler-1.jpeg" alt="Mobiliario Dorado" loading="lazy">
         <div class="info-producto">
             <h3>niño o niña</h3>
-            <p>Incluye tres mesas redondas principal, dos tableros circular en la parte de arriba decorado.</p>
-            <!-- <span class="precio">$50.000</span> -->
+            <p>Incluye tres mesas redondas principales y dos tableros circulares decorados en la parte de arriba.</p>
+            <!-- -->
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20alquiler:%20niño%20o%20niña" class="btn-pedido">Pedir por WhatsApp</a>
         </div> 
     </div>
@@ -52,16 +59,23 @@
         <img src="img/alquiler/alquiler-2.jpeg" alt="Sillas Tiffany" loading="lazy">
         <div class="info-producto">
             <h3>es niño </h3>
-            <p>Incluye tres mesas redondas principal, dos tableros circular.</p>
-            <!-- <span class="precio">$3.500</span> -->
+            <p>Incluye tres mesas redondas principales y dos tableros circulares.</p>
+            <!-- -->
             <a href="https://wa.me/573147767322?text=Hola!%20Me%20interesa%20el%20alquiler:%20es%20niño" class="btn-pedido">Pedir por WhatsApp</a>
         </div>
     </div>
 
 </div>
 
-<footer style="text-align: center; padding: 40px; color: #6a4c93;">
-    <p>&copy; 2026 Dulce Antojo - Elegancia en cada detalle ❤️</p>
+<footer class="pie">
+    <p class="pie-marca">Dulce Antojo</p>
+    <p>Desayunos, detalles y decoraciones hechos con el corazón</p>
+    <div class="pie-redes">
+        <a href="https://wa.me/573147767322" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/dulce._.antojo00/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@dulce.antojo897" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <p class="pie-copy">&copy; 2026 Dulce Antojo</p>
 </footer>
 
 <!-- Modal con marca de agua para proteger la imagen -->
