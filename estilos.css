@@ -669,6 +669,7 @@ body > .subtitulo-solo {
    ========================================= */
 .contacto-container {
     max-width: 520px;
+    width: calc(100% - 32px);
     margin: 56px auto 0;
     padding: 44px 28px;
     background: var(--blanco);
@@ -1123,4 +1124,138 @@ body > .subtitulo-solo {
         transition: none !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* 15. PRODUCTO AGOTADO
+   Para marcar un producto: <div class="producto-card agotado">
+   ========================================= */
+.producto-card.agotado > img,
+.producto-card.agotado .card-img-carrusel img {
+    filter: grayscale(1);
+    opacity: 0.6;
+}
+
+.producto-card.agotado .insignia-inmediata {
+    display: none;
+}
+
+.insignia-agotado {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 6;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--tinta);
+    color: var(--blanco);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.producto-card.agotado .precio {
+    text-decoration: line-through;
+    color: var(--texto-suave);
+}
+
+.producto-card.agotado .btn-pedido {
+    background: var(--blanco);
+    color: var(--ciruela);
+    border: 2px solid var(--ciruela);
+    box-shadow: none;
+}
+
+.producto-card.agotado .btn-pedido::before {
+    content: none;
+}
+
+/* 16. CÓMO PEDIR
+   ========================================= */
+.seccion-info {
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 10px 0 20px;
+}
+
+.info-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+}
+
+.info-card p,
+.info-card li {
+    font-size: 0.97rem;
+    color: var(--texto);
+}
+
+.info-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-card strong {
+    color: var(--tinta);
+}
+
+.info-icono {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--rosa-claro);
+    color: var(--rosa-oscuro);
+    font-size: 1.25rem;
+}
+
+.info-card .chips {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.info-card .chips li {
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--lila);
+    color: var(--ciruela);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.info-enlace {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 800;
+    color: var(--rosa);
+    text-decoration: none;
+}
+
+.info-enlace:hover {
+    gap: 10px;
+}
+
+.contacto-container + .seccion-info {
+    margin-top: 20px;
 }
