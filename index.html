@@ -36,12 +36,49 @@
                 <a href="https://wa.me/573147767322" class="btn-pedido" target="_blank">
                     <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
                 </a>
-                <a href="#categorias" class="btn-secundario">Ver catálogo</a>
+                <a href="#entrega-inmediata" class="btn-secundario"><i class="fas fa-bolt"></i>&nbsp;Entrega inmediata</a>
             </div>
         </div>
         <div class="hero-fotos">
             <img src="img/tendencia/tendencia-1.jpeg" alt="Caja de rosas Dulce Antojo" class="foto-a">
             <img src="img/bandejas/BANDEJA 0.jpg" alt="Bandeja de desayuno sorpresa" class="foto-b">
+        </div>
+    </section>
+
+    <!-- ===== ENTREGA INMEDIATA =====
+         Para agregar un producto, copia un bloque <div class="producto-card producto-inmediato"> ... </div>
+         y cambia la foto, el nombre, el precio y el mensaje de WhatsApp. -->
+    <section class="seccion-inmediata" id="entrega-inmediata">
+        <div class="encabezado">
+            <span class="etiqueta"><i class="fas fa-bolt"></i> Disponible ya</span>
+            <h2 class="titulo">Entrega inmediata</h2>
+            <p class="subtitulo-galeria">Productos listos para entregar hoy mismo, sin esperar a que los preparemos.</p>
+        </div>
+
+        <div class="galeria galeria-inmediata">
+
+            <div class="producto-card producto-inmediato">
+                <span class="insignia-inmediata"><i class="fas fa-bolt"></i> Inmediata</span>
+                <img src="img/instantanea/locion-bad-girl-pink.jpg" alt="Loción Bad Girl Pink" loading="lazy">
+                <div class="info-producto">
+                    <h3>Loción Bad Girl Pink</h3>
+                    <p>Eau de toilette para mujer.</p>
+                    <span class="precio">$40.000</span>
+                    <a href="https://wa.me/573147767322?text=Hola!%20Quiero%20la%20Loci%C3%B3n%20Bad%20Girl%20Pink%20de%20entrega%20inmediata" class="btn-pedido" target="_blank">Pedir por WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="producto-card producto-inmediato">
+                <span class="insignia-inmediata"><i class="fas fa-bolt"></i> Inmediata</span>
+                <img src="img/instantanea/locion-bad-girl.jpg" alt="Loción Bad Girl" loading="lazy">
+                <div class="info-producto">
+                    <h3>Loción Bad Girl</h3>
+                    <p>Eau de toilette para mujer.</p>
+                    <span class="precio">$40.000</span>
+                    <a href="https://wa.me/573147767322?text=Hola!%20Quiero%20la%20Loci%C3%B3n%20Bad%20Girl%20de%20entrega%20inmediata" class="btn-pedido" target="_blank">Pedir por WhatsApp</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -162,7 +199,7 @@
         // Lógica completa de Zoom (Modal) para las fotos de la galería
         const elModal = document.getElementById("modalImagen");
         if (elModal) {
-            const imagenesGaleria = document.querySelectorAll('.galeria-grid .galeria-item img');
+            const imagenesGaleria = document.querySelectorAll('.galeria-grid .galeria-item img, .producto-inmediato > img');
             const imagenGrande = document.getElementById("imgGrande");
             const btnCerrar = document.querySelector(".cerrar");
 

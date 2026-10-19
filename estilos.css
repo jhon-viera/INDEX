@@ -903,6 +903,63 @@ body > .subtitulo-solo {
     transform: rotate(90deg);
 }
 
+/* 13b. ENTREGA INMEDIATA
+   ========================================= */
+.seccion-inmediata {
+    max-width: calc(var(--ancho) - 40px);
+    margin: 40px auto 0;
+    background: linear-gradient(135deg, var(--lila), var(--rosa-claro));
+    border-radius: 32px;
+}
+
+.seccion-inmediata > .encabezado {
+    padding-top: 44px;
+}
+
+.producto-inmediato > img {
+    object-position: 50% 75%;
+}
+
+.galeria-inmediata {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+    max-width: none;
+    padding: 10px 24px 44px;
+}
+
+.galeria-inmediata .producto-card {
+    width: 270px;
+}
+
+.insignia-inmediata {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--oro);
+    color: var(--tinta);
+    font-size: 0.78rem;
+    font-weight: 800;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.precio {
+    display: block;
+    font-family: var(--f-titulo);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--rosa-oscuro);
+    line-height: 1.1;
+    margin: 4px 0 6px;
+}
+
 /* 14. RESPONSIVE
    ========================================= */
 @media (max-width: 900px) {
@@ -1012,6 +1069,24 @@ body > .subtitulo-solo {
 
     .reels-carrusel-container {
         padding: 0 14px;
+    }
+
+    .seccion-inmediata {
+        margin: 30px 10px 0;
+        border-radius: 24px;
+    }
+
+    .galeria-inmediata {
+        gap: 12px;
+        padding: 6px 12px 28px;
+    }
+
+    .galeria-inmediata .producto-card {
+        width: calc(50% - 6px);
+    }
+
+    .precio {
+        font-size: 1.3rem;
     }
 
     .carrusel-btn {
