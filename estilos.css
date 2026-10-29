@@ -1266,3 +1266,28 @@ body > .subtitulo-solo {
     font-size: 0.78rem;
     color: rgba(255, 255, 255, 0.45);
 }
+
+/* 17. ENTREGA INMEDIATA: subsección de belleza y precio por consultar */
+.subtitulo-inmediata {
+    text-align: center;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    color: var(--ciruela);
+    padding: 10px 20px 4px;
+}
+
+.subtitulo-inmediata i {
+    color: var(--rosa);
+    font-size: 0.8em;
+    margin-right: 6px;
+}
+
+.precio.precio-consultar {
+    font-family: var(--f-texto);
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--rosa-oscuro);
+    background: var(--rosa-claro);
+    border-radius: 999px;
+    padding: 6px 14px;
+    width: fit-content;
+}
