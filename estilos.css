@@ -1259,3 +1259,10 @@ body > .subtitulo-solo {
 .contacto-container + .seccion-info {
     margin-top: 20px;
 }
+
+.pie-privacidad {
+    max-width: 520px;
+    margin: 10px auto 0;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.45);
+}

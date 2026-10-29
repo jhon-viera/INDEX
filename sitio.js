@@ -39,4 +39,21 @@
     } else {
         videos.forEach(function (v) { v.preload = 'auto'; v.autoplay = true; v.load(); });
     }
+
+    // 3. Analytics: registrar cada toque en un botón de WhatsApp, con el producto
+    document.addEventListener('click', function (ev) {
+        var a = ev.target.closest && ev.target.closest('a[href*="wa.me"]');
+        if (!a || typeof gtag !== 'function') return;
+        var card = a.closest('.producto-card');
+        var h3 = card && card.querySelector('h3');
+        var producto = h3 ? h3.textContent.trim()
+            : a.classList.contains('whatsapp-float') ? 'Botón flotante' : 'Otro botón';
+        var seccion = (card && card.classList.contains('producto-inmediato'))
+            ? 'Entrega inmediata' : document.title.split('|')[0].trim();
+        gtag('event', 'clic_whatsapp', {
+            producto: producto,
+            seccion: seccion,
+            transport_type: 'beacon'
+        });
+    });
 })();
