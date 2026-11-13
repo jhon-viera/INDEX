@@ -38,6 +38,9 @@
 </head>
 <body>
 
+    <a class="barra-promo" href="https://wa.me/573147767322?text=Hola%21%20Quiero%20un%20desayuno%20para%20grados%20personalizado%20%F0%9F%8E%93" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i> <strong>Temporada de grados:</strong> desayunos personalizados con globo y mensaje. <span>¡Reserva el tuyo!</span>
+    </a>
     <nav class="barra">
     <a href="index.html" class="marca">
         <img src="img/logo.jpeg" alt="Logo Dulce Antojo">
@@ -75,6 +78,25 @@
     <!-- ===== ENTREGA INMEDIATA =====
          Para agregar un producto, copia un bloque <div class="producto-card producto-inmediato"> ... </div>
          y cambia la foto, el nombre, el precio y el mensaje de WhatsApp. -->
+    <!-- ===== PROMO GRADOS ===== -->
+    <section class="promo-grados" id="grados">
+        <div class="promo-grados-foto">
+            <img src="img/promo/desayuno-grados-foto.jpg" alt="Desayuno para grados con globo Estamos orgullosos de ti" loading="lazy">
+        </div>
+        <div class="promo-grados-texto">
+            <span class="etiqueta etiqueta-oro"><i class="fas fa-graduation-cap"></i> Temporada de grados</span>
+            <h2>Desayunos para grados <em>personalizados</em></h2>
+            <p>Sorprende a tu graduado con una bandeja de desayuno y un globo burbuja con su nombre o el mensaje que quieras.</p>
+            <ul class="promo-lista">
+                <li><i class="fas fa-check"></i> Bandeja con sándwiches, omelet, fruta y ponqué</li>
+                <li><i class="fas fa-check"></i> Globo burbuja con birrete y mensaje personalizado</li>
+                <li><i class="fas fa-check"></i> Colores a tu gusto</li>
+            </ul>
+            <p class="promo-nota"><i class="fas fa-calendar-check"></i> Reserva con anticipación: los cupos en temporada de grados se llenan rápido.</p>
+            <a href="https://wa.me/573147767322?text=Hola%21%20Quiero%20un%20desayuno%20para%20grados%20personalizado%20%F0%9F%8E%93" class="btn-pedido btn-grande" target="_blank">Reservar por WhatsApp</a>
+        </div>
+    </section>
+
     <section class="seccion-inmediata" id="entrega-inmediata">
         <div class="encabezado">
             <span class="etiqueta"><i class="fas fa-bolt"></i> Disponible ya</span>
@@ -832,6 +854,15 @@
         }
     </script>
 
+    <!-- ===== AVISO EMERGENTE GRADOS ===== -->
+    <div class="aviso-promo" id="avisoPromo" role="dialog" aria-label="Promoción de grados" hidden>
+        <div class="aviso-caja">
+            <button class="aviso-cerrar" type="button" aria-label="Cerrar">&times;</button>
+            <img src="img/promo/desayuno-grados.jpg" alt="Desayunos para grados personalizados">
+            <a href="https://wa.me/573147767322?text=Hola%21%20Quiero%20un%20desayuno%20para%20grados%20personalizado%20%F0%9F%8E%93" class="btn-pedido btn-grande" target="_blank">Reservar el mío</a>
+            <a href="#grados" class="aviso-ver">Ver más</a>
+        </div>
+    </div>
 <script src="sitio.js"></script>
 </body>
 </html>

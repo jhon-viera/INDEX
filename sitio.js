@@ -47,6 +47,7 @@
         var card = a.closest('.producto-card');
         var h3 = card && card.querySelector('h3');
         var producto = h3 ? h3.textContent.trim()
+            : a.closest('.promo-grados, .aviso-promo, .barra-promo') ? 'Desayuno de grados'
             : a.classList.contains('whatsapp-float') ? 'Botón flotante' : 'Otro botón';
         var seccion = (card && card.classList.contains('producto-inmediato'))
             ? 'Entrega inmediata' : document.title.split('|')[0].trim();
@@ -56,4 +57,20 @@
             transport_type: 'beacon'
         });
     });
+
+    // 4. Aviso de la promoción: aparece una vez por visita, a los 4 segundos
+    var aviso = document.getElementById('avisoPromo');
+    if (aviso) {
+        var visto = false;
+        try { visto = sessionStorage.getItem('avisoGrados') === '1'; } catch (e) {}
+        var cerrar = function () {
+            aviso.hidden = true;
+            try { sessionStorage.setItem('avisoGrados', '1'); } catch (e) {}
+        };
+        if (!visto) setTimeout(function () { aviso.hidden = false; }, 4000);
+        aviso.addEventListener('click', function (e) {
+            if (e.target === aviso || e.target.closest('.aviso-cerrar') || e.target.closest('.aviso-ver') || e.target.closest('.btn-pedido')) cerrar();
+        });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
+    }
 })();
